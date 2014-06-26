@@ -16,20 +16,31 @@
                         <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hyI-t1-v27" customClass="GraphView" customModule="Graph_View">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vi8-Fn-dA2" customClass="GraphView" customModule="GraphKit">
                                 <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="15"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="backgroundLayerColor">
+                                        <color key="value" red="1" green="0.12853154021098134" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="hyI-t1-v27" secondAttribute="trailing" id="GKM-mY-qXw"/>
-                            <constraint firstItem="hyI-t1-v27" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="kFM-GP-aft"/>
-                            <constraint firstAttribute="bottom" secondItem="hyI-t1-v27" secondAttribute="bottom" id="kXS-5X-lEi"/>
-                            <constraint firstItem="hyI-t1-v27" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="xub-to-OH7"/>
+                            <constraint firstItem="Vi8-Fn-dA2" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="2Lv-o4-4hK"/>
+                            <constraint firstItem="Vi8-Fn-dA2" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="RwQ-vE-9Bx"/>
+                            <constraint firstAttribute="bottom" secondItem="Vi8-Fn-dA2" secondAttribute="bottom" id="rqG-QJ-AgO"/>
+                            <constraint firstAttribute="trailing" secondItem="Vi8-Fn-dA2" secondAttribute="trailing" id="tvK-D9-xwe"/>
                         </constraints>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
+                    <connections>
+                        <outlet property="graph" destination="Vi8-Fn-dA2" id="zS9-KM-l4Q"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

@@ -44,6 +44,11 @@ import QuartzCore
     update()
   }
   }
+  @IBInspectable var cornerRadius: CGFloat = 10.0 {
+  didSet {
+    update()
+  }
+  }
   @IBInspectable var horizontalLineWidth: CGFloat = 2.0 {
   didSet {
     update()
@@ -201,26 +206,48 @@ import QuartzCore
   }
   
   override func layoutSubviews() {
-    
+    self.update()
   }
   
   override func prepareForInterfaceBuilder() {
     self.dataPoints = [0.3, 0.7, 2.9, 0.0, 7.7, 4.3, 2.6, 1.1, 10.0, 8.2, 9.3, 5.5, 3,7]
     self.horizontalTickMarkLabelStrings = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13"]
+    self.update()
   }
   
   func update() {
-    if self.dataPoints != [] {
-      if self.displayHorizontalTickMarkLabels && horizontalTickMarkLabelStrings {
+    if self.dataPoints != nil {
+      if self.displayHorizontalTickMarkLabels == true && horizontalTickMarkLabelStrings != nil {
         createGraph()
-      } else if !self.displayHorizontalTickMarkLabels {
+      } else if self.displayHorizontalTickMarkLabels == false {
         createGraph()
       }
     }
   }
   
   func createGraph() {
+    self.backgroundLayer = nil
+    self.topLineLayer = nil
+    self.middleLineLayer = nil
+    self.xAxisLineLayer = nil
+    self.yAxisLineLayer = nil
+    self.horizontalTickMarks = nil
+    self.verticalTickMarks = nil
+    self.verticalLines = nil
+    self.horizontalTickMarkLabels = nil
+    self.veticalTickMarkLabels = nil
+    self.lineGraphLayer = nil
     
+    self.makeBackground()
+  }
+  
+  func makeBackground() {
+    self.backgroundLayer = CAShapeLayer()
+    self.backgroundLayer.backgroundColor = self.backgroundLayerColor.CGColor
+    self.backgroundLayer.fillColor = self.backgroundLayerColor.CGColor
+    let path = UIBezierPath(roundedRect: self.bounds, cornerRadius: self.cornerRadius)
+    self.backgroundLayer.path = path.CGPath
+    self.layer.addSublayer(self.backgroundLayer)
   }
   
 }

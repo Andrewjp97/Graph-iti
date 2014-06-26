@@ -12,11 +12,12 @@
 		AE35476F195CA215006A823C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE35476D195CA215006A823C /* Main.storyboard */; };
 		AE354771195CA215006A823C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AE354770195CA215006A823C /* Images.xcassets */; };
 		AE35477D195CA216006A823C /* Graph_itiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE35477C195CA216006A823C /* Graph_itiTests.swift */; };
-		AE354790195CA230006A823C /* Graph View.h in Headers */ = {isa = PBXBuildFile; fileRef = AE35478F195CA230006A823C /* Graph View.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		AE354796195CA231006A823C /* Graph View.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE35478B195CA230006A823C /* Graph View.framework */; };
-		AE35479D195CA231006A823C /* Graph_ViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE35479C195CA231006A823C /* Graph_ViewTests.swift */; };
-		AE3547A0195CA231006A823C /* Graph View.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE35478B195CA230006A823C /* Graph View.framework */; };
-		AE3547A1195CA231006A823C /* Graph View.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = AE35478B195CA230006A823C /* Graph View.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		AE354818195CC2D1006A823C /* GraphKit.h in Headers */ = {isa = PBXBuildFile; fileRef = AE354817195CC2D1006A823C /* GraphKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AE35481E195CC2D1006A823C /* GraphKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE354813195CC2D0006A823C /* GraphKit.framework */; };
+		AE354825195CC2D1006A823C /* GraphKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE354824195CC2D1006A823C /* GraphKitTests.swift */; };
+		AE354828195CC2D1006A823C /* GraphKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE354813195CC2D0006A823C /* GraphKit.framework */; };
+		AE354829195CC2D1006A823C /* GraphKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = AE354813195CC2D0006A823C /* GraphKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		AE354835195CC2EB006A823C /* GraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE354834195CC2EB006A823C /* GraphView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,33 +28,33 @@
 			remoteGlobalIDString = AE354763195CA215006A823C;
 			remoteInfo = "Graph-iti";
 		};
-		AE354797195CA231006A823C /* PBXContainerItemProxy */ = {
+		AE35481F195CC2D1006A823C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = AE35475C195CA215006A823C /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = AE35478A195CA230006A823C;
-			remoteInfo = "Graph View";
+			remoteGlobalIDString = AE354812195CC2D0006A823C;
+			remoteInfo = GraphKit;
 		};
-		AE35479E195CA231006A823C /* PBXContainerItemProxy */ = {
+		AE354826195CC2D1006A823C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = AE35475C195CA215006A823C /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = AE35478A195CA230006A823C;
-			remoteInfo = "Graph View";
+			remoteGlobalIDString = AE354812195CC2D0006A823C;
+			remoteInfo = GraphKit;
 		};
-		AE3547A2195CA231006A823C /* PBXContainerItemProxy */ = {
+		AE35482A195CC2D1006A823C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = AE35475C195CA215006A823C /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = AE35478A195CA230006A823C;
-			remoteInfo = "Graph View";
+			remoteGlobalIDString = AE354812195CC2D0006A823C;
+			remoteInfo = GraphKit;
 		};
-		AE3547AB195CA231006A823C /* PBXContainerItemProxy */ = {
+		AE354832195CC2D2006A823C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = AE35475C195CA215006A823C /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = AE35478A195CA230006A823C;
-			remoteInfo = "Graph View";
+			remoteGlobalIDString = AE354812195CC2D0006A823C;
+			remoteInfo = GraphKit;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -64,7 +65,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				AE3547A1195CA231006A823C /* Graph View.framework in Embed Frameworks */,
+				AE354829195CC2D1006A823C /* GraphKit.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -81,12 +82,13 @@
 		AE354776195CA216006A823C /* Graph-itiTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Graph-itiTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE35477B195CA216006A823C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AE35477C195CA216006A823C /* Graph_itiTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Graph_itiTests.swift; sourceTree = "<group>"; };
-		AE35478B195CA230006A823C /* Graph View.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = "Graph View.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		AE35478E195CA230006A823C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		AE35478F195CA230006A823C /* Graph View.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Graph View.h"; sourceTree = "<group>"; };
-		AE354795195CA231006A823C /* Graph ViewTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Graph ViewTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		AE35479B195CA231006A823C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		AE35479C195CA231006A823C /* Graph_ViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Graph_ViewTests.swift; sourceTree = "<group>"; };
+		AE354813195CC2D0006A823C /* GraphKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = GraphKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AE354816195CC2D1006A823C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AE354817195CC2D1006A823C /* GraphKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GraphKit.h; sourceTree = "<group>"; };
+		AE35481D195CC2D1006A823C /* GraphKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GraphKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		AE354823195CC2D1006A823C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AE354824195CC2D1006A823C /* GraphKitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphKitTests.swift; sourceTree = "<group>"; };
+		AE354834195CC2EB006A823C /* GraphView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,7 +96,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AE3547A0195CA231006A823C /* Graph View.framework in Frameworks */,
+				AE354828195CC2D1006A823C /* GraphKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -105,18 +107,18 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		AE354787195CA230006A823C /* Frameworks */ = {
+		AE35480F195CC2D0006A823C /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		AE354792195CA231006A823C /* Frameworks */ = {
+		AE35481A195CC2D1006A823C /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AE354796195CA231006A823C /* Graph View.framework in Frameworks */,
+				AE35481E195CC2D1006A823C /* GraphKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -128,8 +130,8 @@
 			children = (
 				AE354766195CA215006A823C /* Graph-iti */,
 				AE354779195CA216006A823C /* Graph-itiTests */,
-				AE35478C195CA230006A823C /* Graph View */,
-				AE354799195CA231006A823C /* Graph ViewTests */,
+				AE354814195CC2D1006A823C /* GraphKit */,
+				AE354821195CC2D1006A823C /* GraphKitTests */,
 				AE354765195CA215006A823C /* Products */,
 			);
 			sourceTree = "<group>";
@@ -139,8 +141,8 @@
 			children = (
 				AE354764195CA215006A823C /* Graph-iti.app */,
 				AE354776195CA216006A823C /* Graph-itiTests.xctest */,
-				AE35478B195CA230006A823C /* Graph View.framework */,
-				AE354795195CA231006A823C /* Graph ViewTests.xctest */,
+				AE354813195CC2D0006A823C /* GraphKit.framework */,
+				AE35481D195CC2D1006A823C /* GraphKitTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -182,36 +184,37 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		AE35478C195CA230006A823C /* Graph View */ = {
+		AE354814195CC2D1006A823C /* GraphKit */ = {
 			isa = PBXGroup;
 			children = (
-				AE35478F195CA230006A823C /* Graph View.h */,
-				AE35478D195CA230006A823C /* Supporting Files */,
+				AE354817195CC2D1006A823C /* GraphKit.h */,
+				AE354815195CC2D1006A823C /* Supporting Files */,
+				AE354834195CC2EB006A823C /* GraphView.swift */,
 			);
-			path = "Graph View";
+			path = GraphKit;
 			sourceTree = "<group>";
 		};
-		AE35478D195CA230006A823C /* Supporting Files */ = {
+		AE354815195CC2D1006A823C /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				AE35478E195CA230006A823C /* Info.plist */,
+				AE354816195CC2D1006A823C /* Info.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		AE354799195CA231006A823C /* Graph ViewTests */ = {
+		AE354821195CC2D1006A823C /* GraphKitTests */ = {
 			isa = PBXGroup;
 			children = (
-				AE35479C195CA231006A823C /* Graph_ViewTests.swift */,
-				AE35479A195CA231006A823C /* Supporting Files */,
+				AE354824195CC2D1006A823C /* GraphKitTests.swift */,
+				AE354822195CC2D1006A823C /* Supporting Files */,
 			);
-			path = "Graph ViewTests";
+			path = GraphKitTests;
 			sourceTree = "<group>";
 		};
-		AE35479A195CA231006A823C /* Supporting Files */ = {
+		AE354822195CC2D1006A823C /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				AE35479B195CA231006A823C /* Info.plist */,
+				AE354823195CC2D1006A823C /* Info.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -219,11 +222,11 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		AE354788195CA230006A823C /* Headers */ = {
+		AE354810195CC2D0006A823C /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AE354790195CA230006A823C /* Graph View.h in Headers */,
+				AE354818195CC2D1006A823C /* GraphKit.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -242,8 +245,8 @@
 			buildRules = (
 			);
 			dependencies = (
-				AE35479F195CA231006A823C /* PBXTargetDependency */,
-				AE3547A3195CA231006A823C /* PBXTargetDependency */,
+				AE354827195CC2D1006A823C /* PBXTargetDependency */,
+				AE35482B195CC2D1006A823C /* PBXTargetDependency */,
 			);
 			name = "Graph-iti";
 			productName = "Graph-iti";
@@ -268,41 +271,41 @@
 			productReference = AE354776195CA216006A823C /* Graph-itiTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		AE35478A195CA230006A823C /* Graph View */ = {
+		AE354812195CC2D0006A823C /* GraphKit */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = AE3547A4195CA231006A823C /* Build configuration list for PBXNativeTarget "Graph View" */;
+			buildConfigurationList = AE35482C195CC2D1006A823C /* Build configuration list for PBXNativeTarget "GraphKit" */;
 			buildPhases = (
-				AE354786195CA230006A823C /* Sources */,
-				AE354787195CA230006A823C /* Frameworks */,
-				AE354788195CA230006A823C /* Headers */,
-				AE354789195CA230006A823C /* Resources */,
+				AE35480E195CC2D0006A823C /* Sources */,
+				AE35480F195CC2D0006A823C /* Frameworks */,
+				AE354810195CC2D0006A823C /* Headers */,
+				AE354811195CC2D0006A823C /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = "Graph View";
-			productName = "Graph View";
-			productReference = AE35478B195CA230006A823C /* Graph View.framework */;
+			name = GraphKit;
+			productName = GraphKit;
+			productReference = AE354813195CC2D0006A823C /* GraphKit.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		AE354794195CA231006A823C /* Graph ViewTests */ = {
+		AE35481C195CC2D1006A823C /* GraphKitTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = AE3547A8195CA231006A823C /* Build configuration list for PBXNativeTarget "Graph ViewTests" */;
+			buildConfigurationList = AE35482F195CC2D1006A823C /* Build configuration list for PBXNativeTarget "GraphKitTests" */;
 			buildPhases = (
-				AE354791195CA231006A823C /* Sources */,
-				AE354792195CA231006A823C /* Frameworks */,
-				AE354793195CA231006A823C /* Resources */,
+				AE354819195CC2D1006A823C /* Sources */,
+				AE35481A195CC2D1006A823C /* Frameworks */,
+				AE35481B195CC2D1006A823C /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				AE354798195CA231006A823C /* PBXTargetDependency */,
-				AE3547AC195CA231006A823C /* PBXTargetDependency */,
+				AE354820195CC2D1006A823C /* PBXTargetDependency */,
+				AE354833195CC2D2006A823C /* PBXTargetDependency */,
 			);
-			name = "Graph ViewTests";
-			productName = "Graph ViewTests";
-			productReference = AE354795195CA231006A823C /* Graph ViewTests.xctest */;
+			name = GraphKitTests;
+			productName = GraphKitTests;
+			productReference = AE35481D195CC2D1006A823C /* GraphKitTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -321,12 +324,12 @@
 						CreatedOnToolsVersion = 6.0;
 						TestTargetID = AE354763195CA215006A823C;
 					};
-					AE35478A195CA230006A823C = {
+					AE354812195CC2D0006A823C = {
 						CreatedOnToolsVersion = 6.0;
 					};
-					AE354794195CA231006A823C = {
+					AE35481C195CC2D1006A823C = {
 						CreatedOnToolsVersion = 6.0;
-						TestTargetID = AE35478A195CA230006A823C;
+						TestTargetID = AE354812195CC2D0006A823C;
 					};
 				};
 			};
@@ -345,8 +348,8 @@
 			targets = (
 				AE354763195CA215006A823C /* Graph-iti */,
 				AE354775195CA216006A823C /* Graph-itiTests */,
-				AE35478A195CA230006A823C /* Graph View */,
-				AE354794195CA231006A823C /* Graph ViewTests */,
+				AE354812195CC2D0006A823C /* GraphKit */,
+				AE35481C195CC2D1006A823C /* GraphKitTests */,
 			);
 		};
 /* End PBXProject section */
@@ -368,14 +371,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		AE354789195CA230006A823C /* Resources */ = {
+		AE354811195CC2D0006A823C /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		AE354793195CA231006A823C /* Resources */ = {
+		AE35481B195CC2D1006A823C /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -402,18 +405,19 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		AE354786195CA230006A823C /* Sources */ = {
+		AE35480E195CC2D0006A823C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AE354835195CC2EB006A823C /* GraphView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		AE354791195CA231006A823C /* Sources */ = {
+		AE354819195CC2D1006A823C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AE35479D195CA231006A823C /* Graph_ViewTests.swift in Sources */,
+				AE354825195CC2D1006A823C /* GraphKitTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -425,25 +429,25 @@
 			target = AE354763195CA215006A823C /* Graph-iti */;
 			targetProxy = AE354777195CA216006A823C /* PBXContainerItemProxy */;
 		};
-		AE354798195CA231006A823C /* PBXTargetDependency */ = {
+		AE354820195CC2D1006A823C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = AE35478A195CA230006A823C /* Graph View */;
-			targetProxy = AE354797195CA231006A823C /* PBXContainerItemProxy */;
+			target = AE354812195CC2D0006A823C /* GraphKit */;
+			targetProxy = AE35481F195CC2D1006A823C /* PBXContainerItemProxy */;
 		};
-		AE35479F195CA231006A823C /* PBXTargetDependency */ = {
+		AE354827195CC2D1006A823C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = AE35478A195CA230006A823C /* Graph View */;
-			targetProxy = AE35479E195CA231006A823C /* PBXContainerItemProxy */;
+			target = AE354812195CC2D0006A823C /* GraphKit */;
+			targetProxy = AE354826195CC2D1006A823C /* PBXContainerItemProxy */;
 		};
-		AE3547A3195CA231006A823C /* PBXTargetDependency */ = {
+		AE35482B195CC2D1006A823C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = AE35478A195CA230006A823C /* Graph View */;
-			targetProxy = AE3547A2195CA231006A823C /* PBXContainerItemProxy */;
+			target = AE354812195CC2D0006A823C /* GraphKit */;
+			targetProxy = AE35482A195CC2D1006A823C /* PBXContainerItemProxy */;
 		};
-		AE3547AC195CA231006A823C /* PBXTargetDependency */ = {
+		AE354833195CC2D2006A823C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = AE35478A195CA230006A823C /* Graph View */;
-			targetProxy = AE3547AB195CA231006A823C /* PBXContainerItemProxy */;
+			target = AE354812195CC2D0006A823C /* GraphKit */;
+			targetProxy = AE354832195CC2D2006A823C /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -495,7 +499,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				METAL_ENABLE_DEBUG_INFO = YES;
-				ONLY_ACTIVE_ARCH = YES;
+				ONLY_ACTIVE_ARCH = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -532,6 +536,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				METAL_ENABLE_DEBUG_INFO = NO;
+				ONLY_ACTIVE_ARCH = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -596,9 +601,10 @@
 			};
 			name = Release;
 		};
-		AE3547A5195CA231006A823C /* Debug */ = {
+		AE35482D195CC2D1006A823C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -608,26 +614,29 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = "Graph View/Info.plist";
+				INFOPLIST_FILE = GraphKit/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				METAL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
 		};
-		AE3547A6195CA231006A823C /* Release */ = {
+		AE35482E195CC2D1006A823C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Graph View/Info.plist";
+				INFOPLIST_FILE = GraphKit/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				METAL_ENABLE_DEBUG_INFO = NO;
@@ -638,7 +647,7 @@
 			};
 			name = Release;
 		};
-		AE3547A9195CA231006A823C /* Debug */ = {
+		AE354830195CC2D1006A823C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = (
@@ -649,21 +658,22 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = "Graph ViewTests/Info.plist";
+				INFOPLIST_FILE = GraphKitTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				METAL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
 		};
-		AE3547AA195CA231006A823C /* Release */ = {
+		AE354831195CC2D1006A823C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = "Graph ViewTests/Info.plist";
+				INFOPLIST_FILE = GraphKitTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				METAL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -689,6 +699,7 @@
 				AE354782195CA216006A823C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		AE354783195CA216006A823C /* Build configuration list for PBXNativeTarget "Graph-itiTests" */ = {
 			isa = XCConfigurationList;
@@ -697,20 +708,21 @@
 				AE354785195CA216006A823C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
-		AE3547A4195CA231006A823C /* Build configuration list for PBXNativeTarget "Graph View" */ = {
+		AE35482C195CC2D1006A823C /* Build configuration list for PBXNativeTarget "GraphKit" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				AE3547A5195CA231006A823C /* Debug */,
-				AE3547A6195CA231006A823C /* Release */,
+				AE35482D195CC2D1006A823C /* Debug */,
+				AE35482E195CC2D1006A823C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};
-		AE3547A8195CA231006A823C /* Build configuration list for PBXNativeTarget "Graph ViewTests" */ = {
+		AE35482F195CC2D1006A823C /* Build configuration list for PBXNativeTarget "GraphKitTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				AE3547A9195CA231006A823C /* Debug */,
-				AE3547AA195CA231006A823C /* Release */,
+				AE354830195CC2D1006A823C /* Debug */,
+				AE354831195CC2D1006A823C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};

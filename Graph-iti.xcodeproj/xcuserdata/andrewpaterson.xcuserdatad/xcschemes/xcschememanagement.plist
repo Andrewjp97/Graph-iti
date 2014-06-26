@@ -14,6 +14,16 @@
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
+		<key>GraphKit.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>2</integer>
+		</dict>
+		<key>GraphView.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
@@ -33,6 +43,26 @@
 			<true/>
 		</dict>
 		<key>AE354794195CA231006A823C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>AE3547E1195CBD5B006A823C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>AE3547EB195CBD5B006A823C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>AE354812195CC2D0006A823C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>AE35481C195CC2D1006A823C</key>
 		<dict>
 			<key>primary</key>
 			<true/>

@@ -1,6 +1,6 @@
 //
-//  Graph_ViewTests.swift
-//  Graph ViewTests
+//  GraphKitTests.swift
+//  GraphKitTests
 //
 //  Created by Andrew Paterson on 6/26/14.
 //  Copyright (c) 2014 Andrew Paterson. All rights reserved.
@@ -8,7 +8,7 @@
 
 import XCTest
 
-class Graph_ViewTests: XCTestCase {
+class GraphKitTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
