@@ -242,6 +242,9 @@ import QuartzCore
     if self.displayXAxis {
       self.makeXAxis()
     }
+    if self.displayYAxis {
+      self.makeYAxis()
+    }
   }
   
   func makeBackground() {
@@ -264,6 +267,19 @@ import QuartzCore
     path.addLineToPoint(CGPointMake(CGRectGetWidth(self.frame) - 15.0, CGRectGetHeight(self.frame) - 20.0))
     self.xAxisLineLayer.path = path.CGPath
     self.layer.addSublayer(self.xAxisLineLayer)
+  }
+  
+  func makeYAxis() {
+    self.yAxisLineLayer = CAShapeLayer()
+    self.yAxisLineLayer.strokeColor = self.yAxisLineColor.CGColor
+    self.yAxisLineLayer.fillColor = nil
+    self.yAxisLineLayer.lineWidth = self.yAxisLineWidth
+    self.yAxisLineLayer.lineCap = kCALineCapRound
+    let path = UIBezierPath()
+    path.moveToPoint(CGPointMake(10.0, CGRectGetHeight(self.frame) - 20.0))
+    path.addLineToPoint(CGPointMake(10.0, 20.0))
+    self.yAxisLineLayer.path = path.CGPath
+    self.layer.addSublayer(self.yAxisLineLayer)
   }
   
 }
