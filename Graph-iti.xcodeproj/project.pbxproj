@@ -1,0 +1,414 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		AE35476A195CA215006A823C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE354769195CA215006A823C /* AppDelegate.swift */; };
+		AE35476C195CA215006A823C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE35476B195CA215006A823C /* ViewController.swift */; };
+		AE35476F195CA215006A823C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE35476D195CA215006A823C /* Main.storyboard */; };
+		AE354771195CA215006A823C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AE354770195CA215006A823C /* Images.xcassets */; };
+		AE35477D195CA216006A823C /* Graph_itiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE35477C195CA216006A823C /* Graph_itiTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		AE354777195CA216006A823C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AE35475C195CA215006A823C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AE354763195CA215006A823C;
+			remoteInfo = "Graph-iti";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		AE354764195CA215006A823C /* Graph-iti.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Graph-iti.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AE354768195CA215006A823C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AE354769195CA215006A823C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		AE35476B195CA215006A823C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		AE35476E195CA215006A823C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		AE354770195CA215006A823C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		AE354776195CA216006A823C /* Graph-itiTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Graph-itiTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AE35477B195CA216006A823C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AE35477C195CA216006A823C /* Graph_itiTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Graph_itiTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		AE354761195CA215006A823C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AE354773195CA216006A823C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		AE35475B195CA215006A823C = {
+			isa = PBXGroup;
+			children = (
+				AE354766195CA215006A823C /* Graph-iti */,
+				AE354779195CA216006A823C /* Graph-itiTests */,
+				AE354765195CA215006A823C /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		AE354765195CA215006A823C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AE354764195CA215006A823C /* Graph-iti.app */,
+				AE354776195CA216006A823C /* Graph-itiTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		AE354766195CA215006A823C /* Graph-iti */ = {
+			isa = PBXGroup;
+			children = (
+				AE354769195CA215006A823C /* AppDelegate.swift */,
+				AE35476B195CA215006A823C /* ViewController.swift */,
+				AE35476D195CA215006A823C /* Main.storyboard */,
+				AE354770195CA215006A823C /* Images.xcassets */,
+				AE354767195CA215006A823C /* Supporting Files */,
+			);
+			path = "Graph-iti";
+			sourceTree = "<group>";
+		};
+		AE354767195CA215006A823C /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				AE354768195CA215006A823C /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		AE354779195CA216006A823C /* Graph-itiTests */ = {
+			isa = PBXGroup;
+			children = (
+				AE35477C195CA216006A823C /* Graph_itiTests.swift */,
+				AE35477A195CA216006A823C /* Supporting Files */,
+			);
+			path = "Graph-itiTests";
+			sourceTree = "<group>";
+		};
+		AE35477A195CA216006A823C /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				AE35477B195CA216006A823C /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		AE354763195CA215006A823C /* Graph-iti */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AE354780195CA216006A823C /* Build configuration list for PBXNativeTarget "Graph-iti" */;
+			buildPhases = (
+				AE354760195CA215006A823C /* Sources */,
+				AE354761195CA215006A823C /* Frameworks */,
+				AE354762195CA215006A823C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Graph-iti";
+			productName = "Graph-iti";
+			productReference = AE354764195CA215006A823C /* Graph-iti.app */;
+			productType = "com.apple.product-type.application";
+		};
+		AE354775195CA216006A823C /* Graph-itiTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AE354783195CA216006A823C /* Build configuration list for PBXNativeTarget "Graph-itiTests" */;
+			buildPhases = (
+				AE354772195CA216006A823C /* Sources */,
+				AE354773195CA216006A823C /* Frameworks */,
+				AE354774195CA216006A823C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AE354778195CA216006A823C /* PBXTargetDependency */,
+			);
+			name = "Graph-itiTests";
+			productName = "Graph-itiTests";
+			productReference = AE354776195CA216006A823C /* Graph-itiTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		AE35475C195CA215006A823C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0600;
+				ORGANIZATIONNAME = "Andrew Paterson";
+				TargetAttributes = {
+					AE354763195CA215006A823C = {
+						CreatedOnToolsVersion = 6.0;
+					};
+					AE354775195CA216006A823C = {
+						CreatedOnToolsVersion = 6.0;
+						TestTargetID = AE354763195CA215006A823C;
+					};
+				};
+			};
+			buildConfigurationList = AE35475F195CA215006A823C /* Build configuration list for PBXProject "Graph-iti" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = AE35475B195CA215006A823C;
+			productRefGroup = AE354765195CA215006A823C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				AE354763195CA215006A823C /* Graph-iti */,
+				AE354775195CA216006A823C /* Graph-itiTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		AE354762195CA215006A823C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AE35476F195CA215006A823C /* Main.storyboard in Resources */,
+				AE354771195CA215006A823C /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AE354774195CA216006A823C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		AE354760195CA215006A823C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AE35476C195CA215006A823C /* ViewController.swift in Sources */,
+				AE35476A195CA215006A823C /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AE354772195CA216006A823C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AE35477D195CA216006A823C /* Graph_itiTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		AE354778195CA216006A823C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AE354763195CA215006A823C /* Graph-iti */;
+			targetProxy = AE354777195CA216006A823C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		AE35476D195CA215006A823C /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AE35476E195CA215006A823C /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		AE35477E195CA216006A823C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				METAL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		AE35477F195CA216006A823C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				METAL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		AE354781195CA216006A823C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				INFOPLIST_FILE = "Graph-iti/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		AE354782195CA216006A823C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				INFOPLIST_FILE = "Graph-iti/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		AE354784195CA216006A823C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Graph-iti.app/Graph-iti";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "Graph-itiTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				METAL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+			};
+			name = Debug;
+		};
+		AE354785195CA216006A823C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Graph-iti.app/Graph-iti";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "Graph-itiTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				METAL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		AE35475F195CA215006A823C /* Build configuration list for PBXProject "Graph-iti" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AE35477E195CA216006A823C /* Debug */,
+				AE35477F195CA216006A823C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AE354780195CA216006A823C /* Build configuration list for PBXNativeTarget "Graph-iti" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AE354781195CA216006A823C /* Debug */,
+				AE354782195CA216006A823C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		AE354783195CA216006A823C /* Build configuration list for PBXNativeTarget "Graph-itiTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AE354784195CA216006A823C /* Debug */,
+				AE354785195CA216006A823C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = AE35475C195CA215006A823C /* Project object */;
+}
