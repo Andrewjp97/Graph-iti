@@ -39,11 +39,6 @@ import QuartzCore
     update()
   }
   }
-  var verticalTickMarkLabelStrings: String[]! {
-  didSet {
-    update()
-  }
-  }
   @IBInspectable var backgroundLayerColor: UIColor = UIColor.blackColor() {
   didSet {
     update()
@@ -210,10 +205,21 @@ import QuartzCore
   }
   
   override func prepareForInterfaceBuilder() {
-    
+    self.dataPoints = [0.3, 0.7, 2.9, 0.0, 7.7, 4.3, 2.6, 1.1, 10.0, 8.2, 9.3, 5.5, 3,7]
+    self.horizontalTickMarkLabelStrings = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13"]
   }
   
   func update() {
+    if self.dataPoints != [] {
+      if self.displayHorizontalTickMarkLabels && horizontalTickMarkLabelStrings {
+        createGraph()
+      } else if !self.displayHorizontalTickMarkLabels {
+        createGraph()
+      }
+    }
+  }
+  
+  func createGraph() {
     
   }
   
