@@ -13,15 +13,14 @@ import QuartzCore
   
   var intervals: Int = 0
   var backgroundLayer: CAShapeLayer!
-  var topLineLayer: CAShapeLayer!
-  var middleLineLayer: CAShapeLayer!
   var xAxisLineLayer: CAShapeLayer!
   var yAxisLineLayer: CAShapeLayer!
-  var horizontalTickMarks: CAShapeLayer[]!
-  var verticalTickMarks: CAShapeLayer[]!
-  var verticalLines: CAShapeLayer[]!
-  var horizontalTickMarkLabels: CATextLayer[]!
-  var veticalTickMarkLabels: CATextLayer[]!
+  var horizontalTickMarks: CAShapeLayer[] = []
+  var verticalTickMarks: CAShapeLayer[] = []
+  var verticalLines: CAShapeLayer[] = []
+  var horizontalLines: CAShapeLayer[] = []
+  var horizontalTickMarkLabels: CATextLayer[] = []
+  var verticalTickMarkLabels: CATextLayer[] = []
   var lineGraphLayer: CAShapeLayer!
   var pointSymbol: CAShapeLayer! {
   didSet {
@@ -50,6 +49,11 @@ import QuartzCore
   }
   }
   @IBInspectable var horizontalLineWidth: CGFloat = 2.0 {
+  didSet {
+    update()
+  }
+  }
+  @IBInspectable var horizontalLineNumber: CGFloat = 2.0 {
   didSet {
     update()
   }
@@ -84,7 +88,7 @@ import QuartzCore
     update()
   }
   }
-  @IBInspectable var vertialTickMarkColor: UIColor = UIColor.whiteColor() {
+  @IBInspectable var verticalTickMarkColor: UIColor = UIColor.whiteColor() {
   didSet {
     update()
   }
@@ -226,17 +230,40 @@ import QuartzCore
   }
   
   func createGraph() {
+    self.backgroundLayer?.removeFromSuperlayer()
     self.backgroundLayer = nil
-    self.topLineLayer = nil
-    self.middleLineLayer = nil
+    self.xAxisLineLayer?.removeFromSuperlayer()
     self.xAxisLineLayer = nil
+    self.yAxisLineLayer?.removeFromSuperlayer()
     self.yAxisLineLayer = nil
-    self.horizontalTickMarks = nil
-    self.verticalTickMarks = nil
-    self.verticalLines = nil
-    self.horizontalTickMarkLabels = nil
-    self.veticalTickMarkLabels = nil
+    for layer in self.horizontalTickMarks {
+      layer.removeFromSuperlayer()
+    }
+    self.horizontalTickMarks = []
+    for layer in self.verticalTickMarks {
+      layer.removeFromSuperlayer()
+    }
+    self.verticalTickMarks = []
+    for layer in self.verticalLines {
+      layer.removeFromSuperlayer()
+    }
+    self.verticalLines = []
+    for layer in self.horizontalTickMarkLabels {
+      layer.removeFromSuperlayer()
+    }
+    self.horizontalTickMarkLabels = []
+    for layer in self.verticalTickMarkLabels {
+      layer.removeFromSuperlayer()
+    }
+    self.verticalTickMarkLabels = []
+    self.lineGraphLayer?.removeFromSuperlayer()
     self.lineGraphLayer = nil
+    for layer in self.horizontalLines {
+      layer.removeFromSuperlayer()
+    }
+    self.horizontalLines = []
+    
+    
     
     self.makeBackground()
     if self.displayXAxis {
@@ -244,6 +271,9 @@ import QuartzCore
     }
     if self.displayYAxis {
       self.makeYAxis()
+    }
+    if self.displayHorizontalLines == true && self.horizontalLineNumber > 0.0 {
+      self.makeHorizontalLines()
     }
   }
   
@@ -280,6 +310,24 @@ import QuartzCore
     path.addLineToPoint(CGPointMake(10.0, 20.0))
     self.yAxisLineLayer.path = path.CGPath
     self.layer.addSublayer(self.yAxisLineLayer)
+  }
+  
+  func makeHorizontalLines() {
+    let availableHeight = self.frame.height - 40.0
+    let distanceBetweenLines = availableHeight / self.horizontalLineNumber
+    for var i = 0; i < Int(self.horizontalLineNumber); i++ {
+      let line = CAShapeLayer()
+      line.fillColor = nil
+      line.strokeColor = self.horizontalLineColor.CGColor
+      line.lineWidth = self.horizontalLineWidth
+      line.lineCap = kCALineCapRound
+      let path = UIBezierPath()
+      path.moveToPoint(CGPointMake(10.0, CGRectGetHeight(self.frame) - 20.0 - (distanceBetweenLines * (CGFloat(i) + 1.0))))
+      path.addLineToPoint(CGPointMake(CGRectGetWidth(self.frame) - 15.0, CGRectGetHeight(self.frame) - 20.0 - (distanceBetweenLines * (CGFloat(i) + 1.0))))
+      line.path = path.CGPath
+      self.layer.addSublayer(line)
+      self.horizontalLines.append(line)
+    }
   }
   
 }
