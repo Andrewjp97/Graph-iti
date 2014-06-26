@@ -11,23 +11,6 @@ import QuartzCore
 
 @IBDesignable class GraphView: UIView {
   
-  var dataPoints: Double[] = [] {
-  willSet{
-    self.intervals = newValue.count
-    update()
-  }
-  }
-  
-  var horizontalTickMarkLabelStrings: String[]! {
-  didSet {
-    update()
-  }
-  }
-  var verticalTickMarkLabelStrings: String[]! {
-  didSet {
-    update()
-  }
-  }
   var intervals: Int = 0
   var backgroundLayer: CAShapeLayer!
   var topLineLayer: CAShapeLayer!
@@ -45,7 +28,22 @@ import QuartzCore
     update()
   }
   }
-  
+  var dataPoints: Double[] = [] {
+  willSet{
+    self.intervals = newValue.count
+    update()
+  }
+  }
+  var horizontalTickMarkLabelStrings: String[]! {
+  didSet {
+    update()
+  }
+  }
+  var verticalTickMarkLabelStrings: String[]! {
+  didSet {
+    update()
+  }
+  }
   @IBInspectable var backgroundLayerColor: UIColor = UIColor.blackColor() {
   didSet {
     update()
