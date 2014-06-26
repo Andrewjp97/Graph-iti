@@ -12,9 +12,21 @@ import QuartzCore
 @IBDesignable class GraphView: UIView {
   
   var dataPoints: Double[] = [] {
-    willSet{
-      self.intervals = newValue.count
-    }
+  willSet{
+    self.intervals = newValue.count
+    update()
+  }
+  }
+  
+  var horizontalTickMarkLabelStrings: String[]! {
+  didSet {
+    update()
+  }
+  }
+  var verticalTickMarkLabelStrings: String[]! {
+  didSet {
+    update()
+  }
   }
   var intervals: Int = 0
   var backgroundLayer: CAShapeLayer!
@@ -28,38 +40,162 @@ import QuartzCore
   var horizontalTickMarkLabels: CATextLayer[]!
   var veticalTickMarkLabels: CATextLayer[]!
   var lineGraphLayer: CAShapeLayer!
-  var pointSymbol: CAShapeLayer!
+  var pointSymbol: CAShapeLayer! {
+  didSet {
+    update()
+  }
+  }
   
-  @IBInspectable var backgroundLayerColor: UIColor = UIColor.blackColor()
-  @IBInspectable var horizontalLineWidth: CGFloat = 2.0
-  @IBInspectable var verticalLineWidth: CGFloat = 2.0
-  @IBInspectable var graphLineWidth: CGFloat = 2.0
-  @IBInspectable var horizontalLineColor: UIColor = UIColor.whiteColor()
-  @IBInspectable var verticalLineColor: UIColor = UIColor.whiteColor()
-  @IBInspectable var graphLineColor: UIColor = UIColor.whiteColor()
-  @IBInspectable var horizontalTickMarkColor: UIColor = UIColor.whiteColor()
-  @IBInspectable var vertialTickMarkColor: UIColor = UIColor.whiteColor()
-  @IBInspectable var horizontalTickMarkLabelColor: UIColor = UIColor.whiteColor()
-  @IBInspectable var verticalTickMarkLabelColor: UIColor = UIColor.whiteColor()
-  @IBInspectable var xAxisLineColor: UIColor = UIColor.whiteColor()
-  @IBInspectable var yAxisLineColor: UIColor = UIColor.whiteColor()
-  @IBInspectable var xAxisLineWidth: CGFloat = 2.0
-  @IBInspectable var yAxisLineWidth: CGFloat = 2.0
-  @IBInspectable var xAxisTickMarkLineWidth: CGFloat = 2.0
-  @IBInspectable var yAxisTickMarkLineWidth: CGFloat = 2.0
-  @IBInspectable var xAxisTickMarkLabelFontSize: CGFloat = 2.0
-  @IBInspectable var yAxisTickMarkLabelFontSize: CGFloat = 2.0
-  @IBInspectable var pointSymbolBorderColor: UIColor = UIColor.whiteColor()
-  @IBInspectable var pointSymbolFillColor: UIColor = UIColor.grayColor()
-  @IBInspectable var displayPointSymbol: Bool = true
-  @IBInspectable var displayYAxis: Bool = true
-  @IBInspectable var displayXAxis: Bool = true
-  @IBInspectable var displayVerticalLines: Bool = true
-  @IBInspectable var displayHorizontalLines: Bool = true
-  @IBInspectable var displayHorizontalTickMarks: Bool = true
-  @IBInspectable var displayVerticalTickMarks: Bool = true
-  @IBInspectable var displayHorizontalTickMarkLabels = true
-  @IBInspectable var displayVerticalTickMarkLabels = true
+  @IBInspectable var backgroundLayerColor: UIColor = UIColor.blackColor() {
+  didSet {
+    update()
+  }
+  }
+  @IBInspectable var horizontalLineWidth: CGFloat = 2.0 {
+  didSet {
+    update()
+  }
+  }
+  @IBInspectable var verticalLineWidth: CGFloat = 2.0 {
+  didSet {
+    update()
+  }
+  }
+  @IBInspectable var graphLineWidth: CGFloat = 2.0 {
+  didSet {
+    update()
+  }
+  }
+  @IBInspectable var horizontalLineColor: UIColor = UIColor.whiteColor() {
+  didSet {
+    update()
+  }
+  }
+  @IBInspectable var verticalLineColor: UIColor = UIColor.whiteColor() {
+  didSet {
+    update()
+  }
+  }
+  @IBInspectable var graphLineColor: UIColor = UIColor.whiteColor() {
+  didSet {
+    update()
+  }
+  }
+  @IBInspectable var horizontalTickMarkColor: UIColor = UIColor.whiteColor() {
+  didSet {
+    update()
+  }
+  }
+  @IBInspectable var vertialTickMarkColor: UIColor = UIColor.whiteColor() {
+  didSet {
+    update()
+  }
+  }
+  @IBInspectable var horizontalTickMarkLabelColor: UIColor = UIColor.whiteColor() {
+  didSet {
+    update()
+  }
+  }
+  @IBInspectable var verticalTickMarkLabelColor: UIColor = UIColor.whiteColor() {
+  didSet {
+    update()
+  }
+  }
+  @IBInspectable var xAxisLineColor: UIColor = UIColor.whiteColor() {
+  didSet {
+    update()
+  }
+  }
+  @IBInspectable var yAxisLineColor: UIColor = UIColor.whiteColor() {
+  didSet {
+    update()
+  }
+  }
+  @IBInspectable var xAxisLineWidth: CGFloat = 2.0 {
+  didSet {
+    update()
+  }
+  }
+  @IBInspectable var yAxisLineWidth: CGFloat = 2.0 {
+  didSet {
+    update()
+  }
+  }
+  @IBInspectable var xAxisTickMarkLineWidth: CGFloat = 2.0 {
+  didSet {
+    update()
+  }
+  }
+  @IBInspectable var yAxisTickMarkLineWidth: CGFloat = 2.0 {
+  didSet {
+    update()
+  }
+  }
+  @IBInspectable var xAxisTickMarkLabelFontSize: CGFloat = 2.0 {
+  didSet {
+    update()
+  }
+  }
+  @IBInspectable var yAxisTickMarkLabelFontSize: CGFloat = 2.0 {
+  didSet {
+    update()
+  }
+  }
+  @IBInspectable var pointSymbolBorderColor: UIColor = UIColor.whiteColor() {
+  didSet {
+    update()
+  }
+  }
+  @IBInspectable var pointSymbolFillColor: UIColor = UIColor.grayColor() {
+  didSet {
+    update()
+  }
+  }
+  @IBInspectable var displayPointSymbol: Bool = true {
+  didSet {
+    update()
+  }
+  }
+  @IBInspectable var displayYAxis: Bool = true {
+  didSet {
+    update()
+  }
+  }
+  @IBInspectable var displayXAxis: Bool = true {
+  didSet {
+    update()
+  }
+  }
+  @IBInspectable var displayVerticalLines: Bool = true {
+  didSet {
+    update()
+  }
+  }
+  @IBInspectable var displayHorizontalLines: Bool = true {
+  didSet {
+    update()
+  }
+  }
+  @IBInspectable var displayHorizontalTickMarks: Bool = true {
+  didSet {
+    update()
+  }
+  }
+  @IBInspectable var displayVerticalTickMarks: Bool = true {
+  didSet {
+    update()
+  }
+  }
+  @IBInspectable var displayHorizontalTickMarkLabels: Bool = true {
+  didSet {
+    update()
+  }
+  }
+  @IBInspectable var displayVerticalTickMarkLabels: Bool = true {
+  didSet {
+    update()
+  }
+  }
   
   init(frame: CGRect) {
     super.init(frame: frame)
@@ -76,6 +212,10 @@ import QuartzCore
   }
   
   override func prepareForInterfaceBuilder() {
+    
+  }
+  
+  func update() {
     
   }
   
