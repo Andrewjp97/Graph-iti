@@ -239,6 +239,9 @@ import QuartzCore
     self.lineGraphLayer = nil
     
     self.makeBackground()
+    if self.displayXAxis {
+      self.makeXAxis()
+    }
   }
   
   func makeBackground() {
@@ -248,6 +251,19 @@ import QuartzCore
     let path = UIBezierPath(roundedRect: self.bounds, cornerRadius: self.cornerRadius)
     self.backgroundLayer.path = path.CGPath
     self.layer.addSublayer(self.backgroundLayer)
+  }
+  
+  func makeXAxis() {
+    self.xAxisLineLayer = CAShapeLayer()
+    self.xAxisLineLayer.strokeColor = self.xAxisLineColor.CGColor
+    self.xAxisLineLayer.fillColor = nil
+    self.xAxisLineLayer.lineWidth = self.xAxisLineWidth
+    self.xAxisLineLayer.lineCap = kCALineCapRound
+    let path = UIBezierPath()
+    path.moveToPoint(CGPointMake(10.0, CGRectGetHeight(self.frame) - 20.0))
+    path.addLineToPoint(CGPointMake(CGRectGetWidth(self.frame) - 15.0, CGRectGetHeight(self.frame) - 20.0))
+    self.xAxisLineLayer.path = path.CGPath
+    self.layer.addSublayer(self.xAxisLineLayer)
   }
   
 }
