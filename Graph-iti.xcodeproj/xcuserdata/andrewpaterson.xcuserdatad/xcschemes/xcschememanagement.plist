@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>Graph View.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
 		<key>Graph-iti.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -18,6 +23,16 @@
 			<true/>
 		</dict>
 		<key>AE354775195CA216006A823C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>AE35478A195CA230006A823C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>AE354794195CA231006A823C</key>
 		<dict>
 			<key>primary</key>
 			<true/>
