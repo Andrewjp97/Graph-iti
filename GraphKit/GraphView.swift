@@ -63,6 +63,11 @@ import QuartzCore
     update()
   }
   }
+  @IBInspectable var verticalLineNumber: CGFloat = 2.0 {
+  didSet {
+    update()
+  }
+  }
   @IBInspectable var graphLineWidth: CGFloat = 2.0 {
   didSet {
     update()
@@ -88,6 +93,11 @@ import QuartzCore
     update()
   }
   }
+  @IBInspectable var horizontalTickMarkNumber: CGFloat = 10.0 {
+  didSet {
+    update()
+  }
+  }
   @IBInspectable var verticalTickMarkColor: UIColor = UIColor.whiteColor() {
   didSet {
     update()
@@ -98,7 +108,22 @@ import QuartzCore
     update()
   }
   }
+  @IBInspectable var horizontalTickMarkLineWidth: CGFloat = 2.0 {
+  didSet {
+    update()
+  }
+  }
   @IBInspectable var verticalTickMarkLabelColor: UIColor = UIColor.whiteColor() {
+  didSet {
+    update()
+  }
+  }
+  @IBInspectable var veticalTickMarkLineWidth: CGFloat = 2.0 {
+  didSet {
+    update()
+  }
+  }
+  @IBInspectable var verticalTickMarkNumber:CGFloat = 10.0 {
   didSet {
     update()
   }
@@ -275,6 +300,12 @@ import QuartzCore
     if self.displayHorizontalLines == true && self.horizontalLineNumber > 0.0 {
       self.makeHorizontalLines()
     }
+    if self.displayVerticalLines == true && self.verticalLineNumber > 0.0 {
+      self.makeVerticalLines()
+    }
+    if self.displayHorizontalTickMarks == true && self.intervals > 0 {
+      self.makeHorizontalTickMarks()
+    }
   }
   
   func makeBackground() {
@@ -327,6 +358,55 @@ import QuartzCore
       line.path = path.CGPath
       self.layer.addSublayer(line)
       self.horizontalLines.append(line)
+    }
+  }
+  
+  func makeVerticalLines() {
+    let availableWidth = self.frame.width - 25.0
+    let distanceBetweenLines:CGFloat = availableWidth / self.verticalLineNumber
+    for var i = 0; i < Int(self.verticalLineNumber); i++ {
+      let line = CAShapeLayer()
+      line.fillColor = nil
+      line.strokeColor = self.verticalLineColor.CGColor
+      line.lineWidth = self.verticalLineWidth
+      line.lineCap = kCALineCapRound
+      let path = UIBezierPath()
+      path.moveToPoint(CGPointMake(10.0 + (distanceBetweenLines * (CGFloat(i) + 1.0)), 20.0))
+      path.addLineToPoint(CGPointMake(10.0 + (distanceBetweenLines * (CGFloat(i) + 1.0)), CGRectGetHeight(self.frame) - 20.0))
+      line.path = path.CGPath
+      self.layer.addSublayer(line)
+      self.verticalLines.append(line)
+    }
+  }
+  
+  func makeHorizontalTickMarks() {
+    let availableWidth = self.frame.width - 25.0
+    let distanceBetweenLines:CGFloat = availableWidth / self.horizontalTickMarkNumber
+    
+    let line = CAShapeLayer()
+    line.fillColor = nil
+    line.strokeColor = self.horizontalTickMarkColor.CGColor
+    line.lineWidth = self.horizontalTickMarkLineWidth
+    line.lineCap = kCALineCapRound
+    let path = UIBezierPath()
+    path.moveToPoint(CGPointMake(10.0, CGRectGetHeight(self.frame) - 25.0))
+    path.addLineToPoint(CGPointMake(10.0, CGRectGetHeight(self.frame) - 15.0))
+    line.path = path.CGPath
+    self.layer.addSublayer(line)
+    self.horizontalTickMarks.append(line)
+    
+    for var i = 0; i < self.intervals; i++ {
+      let line = CAShapeLayer()
+      line.fillColor = nil
+      line.strokeColor = self.horizontalTickMarkColor.CGColor
+      line.lineWidth = self.horizontalTickMarkLineWidth
+      line.lineCap = kCALineCapRound
+      let path = UIBezierPath()
+      path.moveToPoint(CGPointMake(10.0 + (distanceBetweenLines * (CGFloat(i) + 1.0)), CGRectGetHeight(self.frame) - 25.0))
+      path.addLineToPoint(CGPointMake(10.0 + (distanceBetweenLines * (CGFloat(i) + 1.0)), CGRectGetHeight(self.frame) - 15.0))
+      line.path = path.CGPath
+      self.layer.addSublayer(line)
+      self.horizontalTickMarks.append(line)
     }
   }
   
