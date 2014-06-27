@@ -11,6 +11,11 @@ import QuartzCore
 
 @IBDesignable class GraphView: UIView {
   
+  enum labelPosition: Int {
+    case Left = 1,
+    Right
+  }
+  
   var intervals: Int = 0
   var backgroundLayer: CAShapeLayer!
   var xAxisLineLayer: CAShapeLayer!
@@ -98,6 +103,11 @@ import QuartzCore
     update()
   }
   }
+  @IBInspectable var horizontalTickMarkLength: CGFloat = 10.0 {
+  didSet {
+    update()
+  }
+  }
   @IBInspectable var verticalTickMarkColor: UIColor = UIColor.whiteColor() {
   didSet {
     update()
@@ -113,6 +123,11 @@ import QuartzCore
     update()
   }
   }
+  @IBInspectable var horizontalTickMarkLabelFontSize: CGFloat = 12.0 {
+  didSet {
+    update()
+  }
+  }
   @IBInspectable var verticalTickMarkLabelColor: UIColor = UIColor.whiteColor() {
   didSet {
     update()
@@ -124,6 +139,16 @@ import QuartzCore
   }
   }
   @IBInspectable var verticalTickMarkNumber:CGFloat = 10.0 {
+  didSet {
+    update()
+  }
+  }
+  @IBInspectable var verticalTickMarkLabelFontSize: CGFloat = 12.0 {
+  didSet {
+    update()
+  }
+  }
+  @IBInspectable var verticalTickMarkLength: CGFloat = 10.0 {
   didSet {
     update()
   }
@@ -223,6 +248,43 @@ import QuartzCore
     update()
   }
   }
+  @IBInspectable var leftEdgeInset: CGFloat = 15.0 {
+  didSet {
+    update()
+  }
+  }
+  @IBInspectable var rightEdgeInset: CGFloat = 15.0 {
+  didSet {
+    update()
+  }
+  }
+  @IBInspectable var topEdgeInset: CGFloat = 20.0 {
+  didSet {
+    update()
+  }
+  }
+  @IBInspectable var bottomEdgeInset: CGFloat = 20.0 {
+  didSet {
+    update()
+  }
+  }
+  @IBInspectable var alignVerticalLabelsRightInsteadOfLeft: Bool = false {
+  didSet {
+    switch alignVerticalLabelsRightInsteadOfLeft {
+    case true:
+      self.verticalLabelAlignment = .Right
+    case false:
+      self.verticalLabelAlignment = .Left
+    default:
+      self.verticalLabelAlignment = .Left
+    }
+  }
+  }
+  var verticalLabelAlignment: labelPosition = .Left {
+  didSet {
+    update()
+  }
+  }
   
   init(frame: CGRect) {
     super.init(frame: frame)
@@ -309,6 +371,9 @@ import QuartzCore
     if self.displayVerticalTickMarks == true && self.verticalTickMarkNumber > 0.0 {
       self.makeVerticalTickMarks()
     }
+    if self.displayHorizontalTickMarkLabels == true && self.horizontalTickMarkLabelStrings != nil {
+      self.makeHorizontalTickMarkLabels()
+    }
   }
   
   func makeBackground() {
@@ -327,8 +392,8 @@ import QuartzCore
     self.xAxisLineLayer.lineWidth = self.xAxisLineWidth
     self.xAxisLineLayer.lineCap = kCALineCapRound
     let path = UIBezierPath()
-    path.moveToPoint(CGPointMake(10.0, CGRectGetHeight(self.frame) - 20.0))
-    path.addLineToPoint(CGPointMake(CGRectGetWidth(self.frame) - 15.0, CGRectGetHeight(self.frame) - 20.0))
+    path.moveToPoint(CGPointMake(self.leftEdgeInset, CGRectGetHeight(self.frame) - self.bottomEdgeInset))
+    path.addLineToPoint(CGPointMake(CGRectGetWidth(self.frame) - self.rightEdgeInset, CGRectGetHeight(self.frame) - self.bottomEdgeInset))
     self.xAxisLineLayer.path = path.CGPath
     self.layer.addSublayer(self.xAxisLineLayer)
   }
@@ -340,14 +405,14 @@ import QuartzCore
     self.yAxisLineLayer.lineWidth = self.yAxisLineWidth
     self.yAxisLineLayer.lineCap = kCALineCapRound
     let path = UIBezierPath()
-    path.moveToPoint(CGPointMake(10.0, CGRectGetHeight(self.frame) - 20.0))
-    path.addLineToPoint(CGPointMake(10.0, 20.0))
+    path.moveToPoint(CGPointMake(self.leftEdgeInset, CGRectGetHeight(self.frame) - self.bottomEdgeInset))
+    path.addLineToPoint(CGPointMake(self.leftEdgeInset, self.topEdgeInset))
     self.yAxisLineLayer.path = path.CGPath
     self.layer.addSublayer(self.yAxisLineLayer)
   }
   
   func makeHorizontalLines() {
-    let availableHeight = self.frame.height - 40.0
+    let availableHeight = self.frame.height - self.topEdgeInset - self.bottomEdgeInset
     let distanceBetweenLines = availableHeight / self.horizontalLineNumber
     for var i = 0; i < Int(self.horizontalLineNumber); i++ {
       let line = CAShapeLayer()
@@ -356,8 +421,8 @@ import QuartzCore
       line.lineWidth = self.horizontalLineWidth
       line.lineCap = kCALineCapRound
       let path = UIBezierPath()
-      path.moveToPoint(CGPointMake(10.0, CGRectGetHeight(self.frame) - 20.0 - (distanceBetweenLines * (CGFloat(i) + 1.0))))
-      path.addLineToPoint(CGPointMake(CGRectGetWidth(self.frame) - 15.0, CGRectGetHeight(self.frame) - 20.0 - (distanceBetweenLines * (CGFloat(i) + 1.0))))
+      path.moveToPoint(CGPointMake(self.leftEdgeInset, CGRectGetHeight(self.frame) - self.bottomEdgeInset - (distanceBetweenLines * (CGFloat(i) + 1.0))))
+      path.addLineToPoint(CGPointMake(CGRectGetWidth(self.frame) - self.rightEdgeInset, CGRectGetHeight(self.frame) - self.bottomEdgeInset - (distanceBetweenLines * (CGFloat(i) + 1.0))))
       line.path = path.CGPath
       self.layer.addSublayer(line)
       self.horizontalLines.append(line)
@@ -365,7 +430,7 @@ import QuartzCore
   }
   
   func makeVerticalLines() {
-    let availableWidth = self.frame.width - 25.0
+    let availableWidth = self.frame.width - self.rightEdgeInset - self.leftEdgeInset
     let distanceBetweenLines:CGFloat = availableWidth / self.verticalLineNumber
     for var i = 0; i < Int(self.verticalLineNumber); i++ {
       let line = CAShapeLayer()
@@ -374,8 +439,8 @@ import QuartzCore
       line.lineWidth = self.verticalLineWidth
       line.lineCap = kCALineCapRound
       let path = UIBezierPath()
-      path.moveToPoint(CGPointMake(10.0 + (distanceBetweenLines * (CGFloat(i) + 1.0)), 20.0))
-      path.addLineToPoint(CGPointMake(10.0 + (distanceBetweenLines * (CGFloat(i) + 1.0)), CGRectGetHeight(self.frame) - 20.0))
+      path.moveToPoint(CGPointMake(self.leftEdgeInset + (distanceBetweenLines * (CGFloat(i) + 1.0)), self.topEdgeInset))
+      path.addLineToPoint(CGPointMake(self.leftEdgeInset + (distanceBetweenLines * (CGFloat(i) + 1.0)), CGRectGetHeight(self.frame) - self.bottomEdgeInset))
       line.path = path.CGPath
       self.layer.addSublayer(line)
       self.verticalLines.append(line)
@@ -383,7 +448,7 @@ import QuartzCore
   }
   
   func makeHorizontalTickMarks() {
-    let availableWidth = self.frame.width - 25.0
+    let availableWidth = self.frame.width - self.rightEdgeInset - self.leftEdgeInset
     let distanceBetweenLines:CGFloat = availableWidth / self.horizontalTickMarkNumber
     
     let line = CAShapeLayer()
@@ -392,8 +457,8 @@ import QuartzCore
     line.lineWidth = self.horizontalTickMarkLineWidth
     line.lineCap = kCALineCapRound
     let path = UIBezierPath()
-    path.moveToPoint(CGPointMake(10.0, CGRectGetHeight(self.frame) - 25.0))
-    path.addLineToPoint(CGPointMake(10.0, CGRectGetHeight(self.frame) - 15.0))
+    path.moveToPoint(CGPointMake(self.leftEdgeInset, CGRectGetHeight(self.frame) - self.bottomEdgeInset - (0.5 * self.horizontalTickMarkLength)))
+    path.addLineToPoint(CGPointMake(self.leftEdgeInset, CGRectGetHeight(self.frame) - self.bottomEdgeInset + (0.5 * self.horizontalTickMarkLength)))
     line.path = path.CGPath
     self.layer.addSublayer(line)
     self.horizontalTickMarks.append(line)
@@ -405,8 +470,8 @@ import QuartzCore
       line.lineWidth = self.horizontalTickMarkLineWidth
       line.lineCap = kCALineCapRound
       let path = UIBezierPath()
-      path.moveToPoint(CGPointMake(10.0 + (distanceBetweenLines * (CGFloat(i) + 1.0)), CGRectGetHeight(self.frame) - 25.0))
-      path.addLineToPoint(CGPointMake(10.0 + (distanceBetweenLines * (CGFloat(i) + 1.0)), CGRectGetHeight(self.frame) - 15.0))
+      path.moveToPoint(CGPointMake(self.leftEdgeInset + (distanceBetweenLines * (CGFloat(i) + 1.0)), CGRectGetHeight(self.frame) - self.bottomEdgeInset - (0.5 * self.horizontalTickMarkLength)))
+      path.addLineToPoint(CGPointMake(self.leftEdgeInset + (distanceBetweenLines * (CGFloat(i) + 1.0)), CGRectGetHeight(self.frame) - self.bottomEdgeInset + (0.5 * self.horizontalTickMarkLength)))
       line.path = path.CGPath
       self.layer.addSublayer(line)
       self.horizontalTickMarks.append(line)
@@ -414,7 +479,7 @@ import QuartzCore
   }
   
   func makeVerticalTickMarks() {
-    let availableHeight = self.frame.height - 40.0
+    let availableHeight = self.frame.height - self.topEdgeInset - self.bottomEdgeInset
     let distanceBetweenLines = availableHeight / self.horizontalTickMarkNumber
     
     let line = CAShapeLayer()
@@ -423,8 +488,8 @@ import QuartzCore
     line.lineWidth = self.horizontalTickMarkLineWidth
     line.lineCap = kCALineCapRound
     let path = UIBezierPath()
-    path.moveToPoint(CGPointMake(5.0, CGRectGetHeight(self.frame) - 20.0))
-    path.addLineToPoint(CGPointMake(15.0, CGRectGetHeight(self.frame) - 20.0))
+    path.moveToPoint(CGPointMake(self.leftEdgeInset - (0.5 * self.verticalTickMarkLength), CGRectGetHeight(self.frame) - self.bottomEdgeInset))
+    path.addLineToPoint(CGPointMake(self.leftEdgeInset + (0.5 * self.verticalTickMarkLength), CGRectGetHeight(self.frame) - self.bottomEdgeInset))
     line.path = path.CGPath
     self.layer.addSublayer(line)
     self.verticalTickMarks.append(line)
@@ -436,13 +501,16 @@ import QuartzCore
       line.lineWidth = self.horizontalTickMarkLineWidth
       line.lineCap = kCALineCapRound
       let path = UIBezierPath()
-      path.moveToPoint(CGPointMake(5.0, CGRectGetHeight(self.frame) - 20.0 - (distanceBetweenLines * (CGFloat(i) + 1.0))))
-      path.addLineToPoint(CGPointMake(15.0, CGRectGetHeight(self.frame) - 20.0 - (distanceBetweenLines * (CGFloat(i) + 1.0))))
+      path.moveToPoint(CGPointMake(self.leftEdgeInset - (0.5 * self.verticalTickMarkLength), CGRectGetHeight(self.frame) - self.bottomEdgeInset - (distanceBetweenLines * (CGFloat(i) + 1.0))))
+      path.addLineToPoint(CGPointMake(self.leftEdgeInset + (0.5 * self.verticalTickMarkLength), CGRectGetHeight(self.frame) - self.bottomEdgeInset - (distanceBetweenLines * (CGFloat(i) + 1.0))))
       line.path = path.CGPath
       self.layer.addSublayer(line)
       self.verticalTickMarks.append(line)
     }
-
+  }
+  
+  func makeHorizontalTickMarkLabels() {
+    
   }
   
 }
